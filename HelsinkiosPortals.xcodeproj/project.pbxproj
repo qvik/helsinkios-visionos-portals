@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		497CD8C72B6D125C00180009 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 497CD8C62B6D125C00180009 /* RealityKitContent */; };
+		497CD8C92B6D125C00180009 /* HelsinkiosPortalsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CD8C82B6D125C00180009 /* HelsinkiosPortalsApp.swift */; };
+		497CD8CB2B6D125C00180009 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CD8CA2B6D125C00180009 /* ContentView.swift */; };
+		497CD8CD2B6D125C00180009 /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CD8CC2B6D125C00180009 /* ImmersiveView.swift */; };
+		497CD8CF2B6D125D00180009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497CD8CE2B6D125D00180009 /* Assets.xcassets */; };
+		497CD8D22B6D125D00180009 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497CD8D12B6D125D00180009 /* Preview Assets.xcassets */; };
+		497CD8DD2B6D125D00180009 /* HelsinkiosPortalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CD8DC2B6D125D00180009 /* HelsinkiosPortalsTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		497CD8D92B6D125D00180009 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 497CD8B92B6D125C00180009 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 497CD8C02B6D125C00180009;
+			remoteInfo = HelsinkiosPortals;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		497CD8C12B6D125C00180009 /* HelsinkiosPortals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelsinkiosPortals.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		497CD8C52B6D125C00180009 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		497CD8C82B6D125C00180009 /* HelsinkiosPortalsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelsinkiosPortalsApp.swift; sourceTree = "<group>"; };
+		497CD8CA2B6D125C00180009 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		497CD8CC2B6D125C00180009 /* ImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveView.swift; sourceTree = "<group>"; };
+		497CD8CE2B6D125D00180009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		497CD8D12B6D125D00180009 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		497CD8D32B6D125D00180009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		497CD8D82B6D125D00180009 /* HelsinkiosPortalsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelsinkiosPortalsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		497CD8DC2B6D125D00180009 /* HelsinkiosPortalsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelsinkiosPortalsTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		497CD8BE2B6D125C00180009 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				497CD8C72B6D125C00180009 /* RealityKitContent in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		497CD8D52B6D125D00180009 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		497CD8B82B6D125C00180009 = {
+			isa = PBXGroup;
+			children = (
+				497CD8C32B6D125C00180009 /* HelsinkiosPortals */,
+				497CD8C42B6D125C00180009 /* Packages */,
+				497CD8DB2B6D125D00180009 /* HelsinkiosPortalsTests */,
+				497CD8C22B6D125C00180009 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		497CD8C22B6D125C00180009 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				497CD8C12B6D125C00180009 /* HelsinkiosPortals.app */,
+				497CD8D82B6D125D00180009 /* HelsinkiosPortalsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		497CD8C32B6D125C00180009 /* HelsinkiosPortals */ = {
+			isa = PBXGroup;
+			children = (
+				497CD8C82B6D125C00180009 /* HelsinkiosPortalsApp.swift */,
+				497CD8CA2B6D125C00180009 /* ContentView.swift */,
+				497CD8CC2B6D125C00180009 /* ImmersiveView.swift */,
+				497CD8CE2B6D125D00180009 /* Assets.xcassets */,
+				497CD8D32B6D125D00180009 /* Info.plist */,
+				497CD8D02B6D125D00180009 /* Preview Content */,
+			);
+			path = HelsinkiosPortals;
+			sourceTree = "<group>";
+		};
+		497CD8C42B6D125C00180009 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				497CD8C52B6D125C00180009 /* RealityKitContent */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		497CD8D02B6D125D00180009 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				497CD8D12B6D125D00180009 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		497CD8DB2B6D125D00180009 /* HelsinkiosPortalsTests */ = {
+			isa = PBXGroup;
+			children = (
+				497CD8DC2B6D125D00180009 /* HelsinkiosPortalsTests.swift */,
+			);
+			path = HelsinkiosPortalsTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		497CD8C02B6D125C00180009 /* HelsinkiosPortals */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 497CD8E02B6D125D00180009 /* Build configuration list for PBXNativeTarget "HelsinkiosPortals" */;
+			buildPhases = (
+				497CD8BD2B6D125C00180009 /* Sources */,
+				497CD8BE2B6D125C00180009 /* Frameworks */,
+				497CD8BF2B6D125C00180009 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelsinkiosPortals;
+			packageProductDependencies = (
+				497CD8C62B6D125C00180009 /* RealityKitContent */,
+			);
+			productName = HelsinkiosPortals;
+			productReference = 497CD8C12B6D125C00180009 /* HelsinkiosPortals.app */;
+			productType = "com.apple.product-type.application";
+		};
+		497CD8D72B6D125D00180009 /* HelsinkiosPortalsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 497CD8E32B6D125D00180009 /* Build configuration list for PBXNativeTarget "HelsinkiosPortalsTests" */;
+			buildPhases = (
+				497CD8D42B6D125D00180009 /* Sources */,
+				497CD8D52B6D125D00180009 /* Frameworks */,
+				497CD8D62B6D125D00180009 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				497CD8DA2B6D125D00180009 /* PBXTargetDependency */,
+			);
+			name = HelsinkiosPortalsTests;
+			productName = HelsinkiosPortalsTests;
+			productReference = 497CD8D82B6D125D00180009 /* HelsinkiosPortalsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		497CD8B92B6D125C00180009 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					497CD8C02B6D125C00180009 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					497CD8D72B6D125D00180009 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 497CD8C02B6D125C00180009;
+					};
+				};
+			};
+			buildConfigurationList = 497CD8BC2B6D125C00180009 /* Build configuration list for PBXProject "HelsinkiosPortals" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 497CD8B82B6D125C00180009;
+			productRefGroup = 497CD8C22B6D125C00180009 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				497CD8C02B6D125C00180009 /* HelsinkiosPortals */,
+				497CD8D72B6D125D00180009 /* HelsinkiosPortalsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		497CD8BF2B6D125C00180009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				497CD8D22B6D125D00180009 /* Preview Assets.xcassets in Resources */,
+				497CD8CF2B6D125D00180009 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		497CD8D62B6D125D00180009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		497CD8BD2B6D125C00180009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				497CD8CB2B6D125C00180009 /* ContentView.swift in Sources */,
+				497CD8C92B6D125C00180009 /* HelsinkiosPortalsApp.swift in Sources */,
+				497CD8CD2B6D125C00180009 /* ImmersiveView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		497CD8D42B6D125D00180009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				497CD8DD2B6D125D00180009 /* HelsinkiosPortalsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		497CD8DA2B6D125D00180009 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 497CD8C02B6D125C00180009 /* HelsinkiosPortals */;
+			targetProxy = 497CD8D92B6D125D00180009 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		497CD8DE2B6D125D00180009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = xros;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		497CD8DF2B6D125D00180009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = xros;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+		497CD8E12B6D125D00180009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HelsinkiosPortals/Preview Content\"";
+				DEVELOPMENT_TEAM = 2RLYKMD3U8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fi.qvik.HelsinkiosPortals;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		497CD8E22B6D125D00180009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HelsinkiosPortals/Preview Content\"";
+				DEVELOPMENT_TEAM = 2RLYKMD3U8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fi.qvik.HelsinkiosPortals;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		497CD8E42B6D125D00180009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2RLYKMD3U8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fi.qvik.HelsinkiosPortalsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelsinkiosPortals.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HelsinkiosPortals";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		497CD8E52B6D125D00180009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2RLYKMD3U8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fi.qvik.HelsinkiosPortalsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelsinkiosPortals.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HelsinkiosPortals";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		497CD8BC2B6D125C00180009 /* Build configuration list for PBXProject "HelsinkiosPortals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				497CD8DE2B6D125D00180009 /* Debug */,
+				497CD8DF2B6D125D00180009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		497CD8E02B6D125D00180009 /* Build configuration list for PBXNativeTarget "HelsinkiosPortals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				497CD8E12B6D125D00180009 /* Debug */,
+				497CD8E22B6D125D00180009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		497CD8E32B6D125D00180009 /* Build configuration list for PBXNativeTarget "HelsinkiosPortalsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				497CD8E42B6D125D00180009 /* Debug */,
+				497CD8E52B6D125D00180009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		497CD8C62B6D125C00180009 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 497CD8B92B6D125C00180009 /* Project object */;
+}
