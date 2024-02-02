@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		496711252B6D1A3C00F3337E /* PortalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711242B6D1A3C00F3337E /* PortalView.swift */; };
+		4967112A2B6D2EC500F3337E /* people_in_park.mov in Resources */ = {isa = PBXBuildFile; fileRef = 496711292B6D2EC500F3337E /* people_in_park.mov */; };
 		497CD8C72B6D125C00180009 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 497CD8C62B6D125C00180009 /* RealityKitContent */; };
 		497CD8C92B6D125C00180009 /* HelsinkiosPortalsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CD8C82B6D125C00180009 /* HelsinkiosPortalsApp.swift */; };
 		497CD8CB2B6D125C00180009 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CD8CA2B6D125C00180009 /* ContentView.swift */; };
@@ -27,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		496711242B6D1A3C00F3337E /* PortalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalView.swift; sourceTree = "<group>"; };
+		496711262B6D28CD00F3337E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		496711292B6D2EC500F3337E /* people_in_park.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = people_in_park.mov; sourceTree = "<group>"; };
 		497CD8C12B6D125C00180009 /* HelsinkiosPortals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelsinkiosPortals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		497CD8C52B6D125C00180009 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		497CD8C82B6D125C00180009 /* HelsinkiosPortalsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelsinkiosPortalsApp.swift; sourceTree = "<group>"; };
@@ -58,9 +63,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		496711282B6D2EAD00F3337E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				496711292B6D2EC500F3337E /* people_in_park.mov */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		497CD8B82B6D125C00180009 = {
 			isa = PBXGroup;
 			children = (
+				496711262B6D28CD00F3337E /* README.md */,
 				497CD8C32B6D125C00180009 /* HelsinkiosPortals */,
 				497CD8C42B6D125C00180009 /* Packages */,
 				497CD8DB2B6D125D00180009 /* HelsinkiosPortalsTests */,
@@ -81,10 +95,12 @@
 			isa = PBXGroup;
 			children = (
 				497CD8C82B6D125C00180009 /* HelsinkiosPortalsApp.swift */,
+				497CD8E62B6D159C00180009 /* Views */,
 				497CD8CA2B6D125C00180009 /* ContentView.swift */,
 				497CD8CC2B6D125C00180009 /* ImmersiveView.swift */,
 				497CD8CE2B6D125D00180009 /* Assets.xcassets */,
 				497CD8D32B6D125D00180009 /* Info.plist */,
+				496711282B6D2EAD00F3337E /* Resources */,
 				497CD8D02B6D125D00180009 /* Preview Content */,
 			);
 			path = HelsinkiosPortals;
@@ -112,6 +128,22 @@
 				497CD8DC2B6D125D00180009 /* HelsinkiosPortalsTests.swift */,
 			);
 			path = HelsinkiosPortalsTests;
+			sourceTree = "<group>";
+		};
+		497CD8E62B6D159C00180009 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				497CD8E72B6D15C100180009 /* PortalView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		497CD8E72B6D15C100180009 /* PortalView */ = {
+			isa = PBXGroup;
+			children = (
+				496711242B6D1A3C00F3337E /* PortalView.swift */,
+			);
+			path = PortalView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4967112A2B6D2EC500F3337E /* people_in_park.mov in Resources */,
 				497CD8D22B6D125D00180009 /* Preview Assets.xcassets in Resources */,
 				497CD8CF2B6D125D00180009 /* Assets.xcassets in Resources */,
 			);
@@ -219,6 +252,7 @@
 			files = (
 				497CD8CB2B6D125C00180009 /* ContentView.swift in Sources */,
 				497CD8C92B6D125C00180009 /* HelsinkiosPortalsApp.swift in Sources */,
+				496711252B6D1A3C00F3337E /* PortalView.swift in Sources */,
 				497CD8CD2B6D125C00180009 /* ImmersiveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

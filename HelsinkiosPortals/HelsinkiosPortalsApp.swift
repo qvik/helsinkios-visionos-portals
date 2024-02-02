@@ -9,13 +9,18 @@ import SwiftUI
 
 @main
 struct HelsinkiosPortalsApp: App {
+    @State private var portalImmersionStyle: ImmersionStyle = .mixed
+    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }.windowStyle(.volumetric)
-
-        ImmersiveSpace(id: "ImmersiveSpace") {
-            ImmersiveView()
-        }
+        ImmersiveSpace(id: "PortalView") {
+            PortalView()
+        }.immersionStyle(selection: $portalImmersionStyle, in: .mixed)
+//        WindowGroup {
+//            ContentView()
+//        }.windowStyle(.volumetric)
+//
+//        ImmersiveSpace(id: "ImmersiveSpace") {
+//            ImmersiveView()
+//        }
     }
 }
