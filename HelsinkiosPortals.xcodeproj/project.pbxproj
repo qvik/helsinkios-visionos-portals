@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		496711252B6D1A3C00F3337E /* PortalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711242B6D1A3C00F3337E /* PortalView.swift */; };
 		4967112A2B6D2EC500F3337E /* people_in_park.mov in Resources */ = {isa = PBXBuildFile; fileRef = 496711292B6D2EC500F3337E /* people_in_park.mov */; };
+		4967112E2B6E7EB400F3337E /* DoorPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967112D2B6E7EB400F3337E /* DoorPortal.swift */; };
+		496711322B6F5BE600F3337E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711312B6F5BE600F3337E /* Constants.swift */; };
+		496711352B70CE3200F3337E /* Entity+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711342B70CE3200F3337E /* Entity+Extensions.swift */; };
 		497CD8C72B6D125C00180009 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 497CD8C62B6D125C00180009 /* RealityKitContent */; };
 		497CD8C92B6D125C00180009 /* HelsinkiosPortalsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CD8C82B6D125C00180009 /* HelsinkiosPortalsApp.swift */; };
-		497CD8CB2B6D125C00180009 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CD8CA2B6D125C00180009 /* ContentView.swift */; };
-		497CD8CD2B6D125C00180009 /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CD8CC2B6D125C00180009 /* ImmersiveView.swift */; };
 		497CD8CF2B6D125D00180009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497CD8CE2B6D125D00180009 /* Assets.xcassets */; };
 		497CD8D22B6D125D00180009 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497CD8D12B6D125D00180009 /* Preview Assets.xcassets */; };
 		497CD8DD2B6D125D00180009 /* HelsinkiosPortalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CD8DC2B6D125D00180009 /* HelsinkiosPortalsTests.swift */; };
@@ -32,11 +33,12 @@
 		496711242B6D1A3C00F3337E /* PortalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalView.swift; sourceTree = "<group>"; };
 		496711262B6D28CD00F3337E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		496711292B6D2EC500F3337E /* people_in_park.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = people_in_park.mov; sourceTree = "<group>"; };
+		4967112D2B6E7EB400F3337E /* DoorPortal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorPortal.swift; sourceTree = "<group>"; };
+		496711312B6F5BE600F3337E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		496711342B70CE3200F3337E /* Entity+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+Extensions.swift"; sourceTree = "<group>"; };
 		497CD8C12B6D125C00180009 /* HelsinkiosPortals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelsinkiosPortals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		497CD8C52B6D125C00180009 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		497CD8C82B6D125C00180009 /* HelsinkiosPortalsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelsinkiosPortalsApp.swift; sourceTree = "<group>"; };
-		497CD8CA2B6D125C00180009 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		497CD8CC2B6D125C00180009 /* ImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveView.swift; sourceTree = "<group>"; };
 		497CD8CE2B6D125D00180009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		497CD8D12B6D125D00180009 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		497CD8D32B6D125D00180009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +73,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		496711332B70CDD400F3337E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				496711342B70CE3200F3337E /* Entity+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		496711362B70D28900F3337E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				496711312B6F5BE600F3337E /* Constants.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		497CD8B82B6D125C00180009 = {
 			isa = PBXGroup;
 			children = (
@@ -96,12 +114,12 @@
 			children = (
 				497CD8C82B6D125C00180009 /* HelsinkiosPortalsApp.swift */,
 				497CD8E62B6D159C00180009 /* Views */,
-				497CD8CA2B6D125C00180009 /* ContentView.swift */,
-				497CD8CC2B6D125C00180009 /* ImmersiveView.swift */,
-				497CD8CE2B6D125D00180009 /* Assets.xcassets */,
-				497CD8D32B6D125D00180009 /* Info.plist */,
+				496711362B70D28900F3337E /* Util */,
+				496711332B70CDD400F3337E /* Extensions */,
 				496711282B6D2EAD00F3337E /* Resources */,
 				497CD8D02B6D125D00180009 /* Preview Content */,
+				497CD8D32B6D125D00180009 /* Info.plist */,
+				497CD8CE2B6D125D00180009 /* Assets.xcassets */,
 			);
 			path = HelsinkiosPortals;
 			sourceTree = "<group>";
@@ -142,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				496711242B6D1A3C00F3337E /* PortalView.swift */,
+				4967112D2B6E7EB400F3337E /* DoorPortal.swift */,
 			);
 			path = PortalView;
 			sourceTree = "<group>";
@@ -250,10 +269,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				497CD8CB2B6D125C00180009 /* ContentView.swift in Sources */,
+				496711352B70CE3200F3337E /* Entity+Extensions.swift in Sources */,
 				497CD8C92B6D125C00180009 /* HelsinkiosPortalsApp.swift in Sources */,
 				496711252B6D1A3C00F3337E /* PortalView.swift in Sources */,
-				497CD8CD2B6D125C00180009 /* ImmersiveView.swift in Sources */,
+				496711322B6F5BE600F3337E /* Constants.swift in Sources */,
+				4967112E2B6E7EB400F3337E /* DoorPortal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,29 +5,71 @@
 //  Created by Matti Dahlbom on 2.2.2024.
 //
 
-import SwiftUI
 import RealityKit
+import SwiftUI
 import AVKit
 
 struct PortalView: View {
+    private static let doorClosedAngle = Float(Angle(degrees: 0).radians)
+    private static let doorOpenAngle = Float(Angle(degrees: 45).radians)
+
+    @State private var doorRotationAngle: Float = doorClosedAngle
+
+    var tap: some Gesture {
+        SpatialTapGesture()
+            .targetedToAnyEntity()
+            .onEnded { value in
+                
+                print("tap ended")
+                
+                if value.entity.parent?.name != "Door" {
+                    print("Something else tapped")
+                    return
+                }
+                
+                print("Rotating the door")
+                
+                withAnimation { // TODO why isnt this working
+                    doorRotationAngle = doorRotationAngle == PortalView.doorOpenAngle ? PortalView.doorClosedAngle : PortalView.doorOpenAngle
+                }
+                print("set doorRotation to radians = \(doorRotationAngle)")
+            }
+    }
+    
     var body: some View {
         RealityView { content in
-            let staticWorld = makeStaticWorld()
-            let staticPortal = makeStaticPortal(world: staticWorld)
+//            let staticWorld = makeStaticWorld()
+//            let staticPortal = makeStaticPortal(world: staticWorld)
+//            staticPortal.transform.translation = .init(0.1, 1.0, -1.0)
             
-            content.add(staticWorld)
-            content.add(staticPortal)
+//            content.add(staticWorld)
+//            content.add(staticPortal)
             
             // TODO try using a "partial sphere" for the portal geometry
             
-            let videoWorld = makeVideoWorld()
-            let videoPortal = makeVideoPortal(world: videoWorld)
+//            let videoWorld = makeVideoWorld()
+//            let videoPortal = makeVideoPortal(world: videoWorld)
+//            videoPortal.transform.translation = .init(-0.6, 1.0, -1.0)
             
-            content.add(videoWorld)
-            content.add(videoPortal)
-        }
-    }
+//            content.add(videoWorld)
+//            content.add(videoPortal)
+            
+            let doorPortal = DoorPortal()
+            doorPortal.transform.translation = .init(0.0, 1.0, -2)
+            content.add(doorPortal)
+        } update: { content in
+            print("Update triggered")
+            
+            guard let doorPortal = content.entities.first(where: { $0.name == DoorPortal.objectName }) as? DoorPortal else {
+                print("DoorPortal not found")
+                return
+            }
 
+            doorPortal.updateDoorRotation(angle: doorRotationAngle)
+        }
+        .gesture(tap)
+    }
+    
     private func createSkySphere(material: RealityKit.Material) -> Entity {
         // Create spherical geometry with an immense radius to act as our "skybox"
         let skySphere = Entity()
@@ -44,6 +86,7 @@ struct PortalView: View {
         let world = Entity()
         world.components[WorldComponent.self] = .init()
                 
+        
         let url = Bundle.main.url(forResource: "people_in_park", withExtension: "mov")!
 
         //create a simple AVPlayer
@@ -77,8 +120,6 @@ struct PortalView: View {
                                                        materials: [PortalMaterial()])
         portal.components[PortalComponent.self] = .init(target: world)
         
-        portal.transform.translation = .init(-0.5, 1.0, -1.0)
-        
         return portal
     }
 
@@ -105,8 +146,6 @@ struct PortalView: View {
                                                                             cornerRadius: 0.02),
                                                        materials: [PortalMaterial()])
         portal.components[PortalComponent.self] = .init(target: world)
-        
-        portal.transform.translation = .init(0.5, 1.0, -1.0)
         
         return portal
     }

@@ -15,12 +15,5 @@ struct HelsinkiosPortalsApp: App {
         ImmersiveSpace(id: "PortalView") {
             PortalView()
         }.immersionStyle(selection: $portalImmersionStyle, in: .mixed)
-//        WindowGroup {
-//            ContentView()
-//        }.windowStyle(.volumetric)
-//
-//        ImmersiveSpace(id: "ImmersiveSpace") {
-//            ImmersiveView()
-//        }
     }
 }
