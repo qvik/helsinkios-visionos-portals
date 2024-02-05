@@ -36,11 +36,13 @@ struct PortalView: View {
     var body: some View {
         RealityView { content in
             let landscapePortal = LandscapeDoorPortal()
-            landscapePortal.transform.translation = .init(-0.5, 1.0, -1.2)
+            landscapePortal.transform.translation = .init(-0.9, 1.0, -1.2)
+            landscapePortal.orientation *= simd_quatf(angle: Constants.deg20, axis: [0, 1, 0])
             content.add(landscapePortal)
             
             let videoPortal = VideoDoorPortal()
-            videoPortal.transform.translation = .init(0.3, 1.0, -1.2)
+            videoPortal.transform.translation = .init(0.4, 1.0, -1.2)
+            videoPortal.orientation *= simd_quatf(angle: -Constants.deg20, axis: [0, 1, 0])
             content.add(videoPortal)
             
             // TODO add the floating 3D logo

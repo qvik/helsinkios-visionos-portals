@@ -10,4 +10,5 @@ import SwiftUI
 struct Constants {
     static let deg90 = Float(Angle(degrees: 90).radians)
     static let deg45 = Float(Angle(degrees: 45).radians)
+    static let deg20 = Float(Angle(degrees: 20).radians)
 }
