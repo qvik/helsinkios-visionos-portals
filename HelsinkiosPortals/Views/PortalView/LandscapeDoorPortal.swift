@@ -7,6 +7,7 @@
 
 import RealityKit
 
+/// Implements a door portal that displays a world rendering a spherical projection 360 image
 class LandscapeDoorPortal: DoorPortal {
     override func createPortalWorld() -> Entity {
         let world = Entity()

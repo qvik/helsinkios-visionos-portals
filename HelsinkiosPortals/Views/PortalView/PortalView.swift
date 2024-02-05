@@ -42,17 +42,17 @@ struct PortalView: View {
             let videoPortal = VideoDoorPortal()
             videoPortal.transform.translation = .init(0.3, 1.0, -1.2)
             content.add(videoPortal)
-
-        } update: { content in
-            print("Update triggered")
             
-            guard let landscapeDoorPortal = content.entities.first(where: { $0 is LandscapeDoorPortal }) as? DoorPortal,
-                  let videoDoorPortal = content.entities.first(where: { $0 is VideoDoorPortal }) as? DoorPortal else {
-                fatalError("portal(s) not found")
+            // TODO add the floating 3D logo
+            
+        } update: { content in
+            if let landscapeDoorPortal = content.entities.first(where: { $0 is LandscapeDoorPortal }) as? DoorPortal {
+                landscapeDoorPortal.setState(state: landscapePortalState)
             }
-
-            landscapeDoorPortal.setState(state: landscapePortalState)
-            videoDoorPortal.setState(state: videoPortalState)
+            
+            if let videoDoorPortal = content.entities.first(where: { $0 is VideoDoorPortal }) as? DoorPortal {
+                videoDoorPortal.setState(state: videoPortalState)
+            }
         }
         .gesture(tap)
     }
