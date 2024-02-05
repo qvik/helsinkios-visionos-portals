@@ -16,6 +16,9 @@ This software is available under the [MIT License](LICENSE.md).
 
 The 3D model, image and video resources used are free downloads from
 
+- blenderkit.com
 - turbosquid.com
 - texturify.com
 - vecteezy.com
+
+With respect to the authors' copyrights.
