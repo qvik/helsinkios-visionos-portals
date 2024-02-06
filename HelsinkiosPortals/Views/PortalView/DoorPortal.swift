@@ -107,7 +107,14 @@ class DoorPortal: Entity {
         // Place the bottom board and adjust its size to fit the door frame
         let bottomBoard = topBoard.clone(recursive: true)
         bottomBoard.scale.x *= 1.2
-        bottomBoard.position.y -= (worldDoorHeight + boardWidth)
+        bottomBoard.position.y -= (worldDoorHeight + boardWidth) - 0.005 // <-- magic number to fix a crack between door + frame
+
+        // Place the stepping board and adjust its size to fit the door frame
+        let steppingBoard = bottomBoard.clone(recursive: true)
+        steppingBoard.scale *= 0.6
+        steppingBoard.scale.z *= 5
+        steppingBoard.position.z += 0.05
+        steppingBoard.position.y -= 0.022
 
         // Place the left board and adjust its size to fit the door frame
         leftBoard.scale.x *= worldDoorHeight / boardLength
@@ -120,6 +127,7 @@ class DoorPortal: Entity {
 
         addChild(topBoard)
         addChild(bottomBoard)
+        addChild(steppingBoard)
         addChild(leftBoard)
         addChild(rightBoard)
     }
