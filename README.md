@@ -14,11 +14,12 @@ This software is available under the [MIT License](LICENSE.md).
 
 # Acknowledgements & attritions
 
-The 3D model, image and video resources used are free downloads from
+Some 3D model, sound, image and video resources used are free downloads from
 
 - blenderkit.com
 - turbosquid.com
 - texturify.com
 - vecteezy.com
+- orangefreesounds.com
 
 With respect to the authors' copyrights.

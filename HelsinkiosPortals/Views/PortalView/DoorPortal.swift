@@ -21,6 +21,8 @@ class DoorPortal: Entity {
     private var doorOriginalOrientation = simd_quatf()
     private var doorScale = SIMD3<Float>()
     
+    private var doorAudio: AudioFileResource
+    
     /// Returns the width of the door's geometry
     var doorWidth: Float {
         doorBoundingBox.max.x - doorBoundingBox.min.x
@@ -41,14 +43,25 @@ class DoorPortal: Entity {
         doorHeight * doorScale.z
     }
 
-    required init() {
+    init(doorAudio: AudioFileResource) {
+        self.doorAudio = doorAudio
         super.init()
+    }
+    
+    required convenience init() {
+        let doorAudio = try! AudioFileResource.load(named: "door_open.mp3")
+        
+        self.init(doorAudio: doorAudio)
 
         self.name = String(describing: self)
         
         addDoor()
         addDoorFrame()
         addPortalPlane()
+    }
+    
+    func playSound() {
+        playAudio(doorAudio)
     }
     
     /// Creates the door and adds it as a child entity

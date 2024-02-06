@@ -11,6 +11,7 @@ import AVKit
 
 /// Implements a door portal that displays world rendering a 360 video 
 class VideoDoorPortal: DoorPortal {
+    
     override func createPortalWorld() -> Entity {
         let world = Entity()
         world.components[WorldComponent.self] = .init()
@@ -39,6 +40,18 @@ class VideoDoorPortal: DoorPortal {
             player.seek(to: .zero)
             player.play()
         }
+        
+//        spatialAudio = SpatialAudioComponent(gain: -10, directivity: .beam(focus: 0.9))
+//        
+//        let birdAudio = try! AudioFileResource.load(named: "bird_sounds.mp3", configuration: .init(shouldLoop: true, shouldRandomizeStartTime: true))
+//        playAudio(birdAudio)
+        
+        // TRY THIS: point the audio direction towards the floor?
+//        let audioSource = Entity()
+//        parent.addChild(audioSource)
+//        audioSource.orientation = .init(angle: .pi, axis: [0, 1, 0])
+        
+        // use AVAudioEnvironmentDistanceAttenuationParameters ?
 
         return world
     }

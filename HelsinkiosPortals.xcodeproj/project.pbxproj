@@ -14,6 +14,9 @@
 		496711352B70CE3200F3337E /* Entity+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711342B70CE3200F3337E /* Entity+Extensions.swift */; };
 		496711382B71118000F3337E /* LandscapeDoorPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711372B71118000F3337E /* LandscapeDoorPortal.swift */; };
 		4967113A2B71160500F3337E /* VideoDoorPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711392B71160500F3337E /* VideoDoorPortal.swift */; };
+		4967113C2B72248200F3337E /* CorridorDoorPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967113B2B72248200F3337E /* CorridorDoorPortal.swift */; };
+		4967113E2B7290B400F3337E /* door_open.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4967113D2B7290B400F3337E /* door_open.mp3 */; };
+		496711402B7294BE00F3337E /* bird_sounds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4967113F2B7294BE00F3337E /* bird_sounds.mp3 */; };
 		497CD8C72B6D125C00180009 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 497CD8C62B6D125C00180009 /* RealityKitContent */; };
 		497CD8C92B6D125C00180009 /* HelsinkiosPortalsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CD8C82B6D125C00180009 /* HelsinkiosPortalsApp.swift */; };
 		497CD8CF2B6D125D00180009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497CD8CE2B6D125D00180009 /* Assets.xcassets */; };
@@ -40,6 +43,9 @@
 		496711342B70CE3200F3337E /* Entity+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+Extensions.swift"; sourceTree = "<group>"; };
 		496711372B71118000F3337E /* LandscapeDoorPortal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeDoorPortal.swift; sourceTree = "<group>"; };
 		496711392B71160500F3337E /* VideoDoorPortal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDoorPortal.swift; sourceTree = "<group>"; };
+		4967113B2B72248200F3337E /* CorridorDoorPortal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorridorDoorPortal.swift; sourceTree = "<group>"; };
+		4967113D2B7290B400F3337E /* door_open.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = door_open.mp3; sourceTree = "<group>"; };
+		4967113F2B7294BE00F3337E /* bird_sounds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bird_sounds.mp3; sourceTree = "<group>"; };
 		497CD8C12B6D125C00180009 /* HelsinkiosPortals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelsinkiosPortals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		497CD8C52B6D125C00180009 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		497CD8C82B6D125C00180009 /* HelsinkiosPortalsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelsinkiosPortalsApp.swift; sourceTree = "<group>"; };
@@ -72,6 +78,8 @@
 		496711282B6D2EAD00F3337E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4967113D2B7290B400F3337E /* door_open.mp3 */,
+				4967113F2B7294BE00F3337E /* bird_sounds.mp3 */,
 				496711292B6D2EC500F3337E /* people_in_park.mov */,
 			);
 			path = Resources;
@@ -167,6 +175,7 @@
 				4967112D2B6E7EB400F3337E /* DoorPortal.swift */,
 				496711372B71118000F3337E /* LandscapeDoorPortal.swift */,
 				496711392B71160500F3337E /* VideoDoorPortal.swift */,
+				4967113B2B72248200F3337E /* CorridorDoorPortal.swift */,
 			);
 			path = PortalView;
 			sourceTree = "<group>";
@@ -255,9 +264,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4967113E2B7290B400F3337E /* door_open.mp3 in Resources */,
 				4967112A2B6D2EC500F3337E /* people_in_park.mov in Resources */,
 				497CD8D22B6D125D00180009 /* Preview Assets.xcassets in Resources */,
 				497CD8CF2B6D125D00180009 /* Assets.xcassets in Resources */,
+				496711402B7294BE00F3337E /* bird_sounds.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +291,7 @@
 				4967113A2B71160500F3337E /* VideoDoorPortal.swift in Sources */,
 				496711252B6D1A3C00F3337E /* PortalView.swift in Sources */,
 				496711382B71118000F3337E /* LandscapeDoorPortal.swift in Sources */,
+				4967113C2B72248200F3337E /* CorridorDoorPortal.swift in Sources */,
 				496711322B6F5BE600F3337E /* Constants.swift in Sources */,
 				4967112E2B6E7EB400F3337E /* DoorPortal.swift in Sources */,
 			);
