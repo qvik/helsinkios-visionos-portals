@@ -53,6 +53,7 @@ class DoorPortal: Entity {
         
         self.init(doorAudio: doorAudio)
 
+        self.spatialAudio = SpatialAudioComponent(gain: -10)
         self.name = String(describing: self)
         
         addDoor()
