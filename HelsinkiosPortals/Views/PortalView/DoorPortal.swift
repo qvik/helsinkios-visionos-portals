@@ -21,6 +21,8 @@ class DoorPortal: Entity {
     private var doorOriginalOrientation = simd_quatf()
     private var doorScale = SIMD3<Float>()
     
+    private var doorAudio: AudioFileResource
+    
     /// Returns the width of the door's geometry
     var doorWidth: Float {
         doorBoundingBox.max.x - doorBoundingBox.min.x
@@ -41,14 +43,26 @@ class DoorPortal: Entity {
         doorHeight * doorScale.z
     }
 
-    required init() {
+    init(doorAudio: AudioFileResource) {
+        self.doorAudio = doorAudio
         super.init()
+    }
+    
+    required convenience init() {
+        let doorAudio = try! AudioFileResource.load(named: "door_open.mp3")
+        
+        self.init(doorAudio: doorAudio)
 
+        self.spatialAudio = SpatialAudioComponent(gain: -15)
         self.name = String(describing: self)
         
         addDoor()
         addDoorFrame()
         addPortalPlane()
+    }
+    
+    func playSound() {
+        playAudio(doorAudio)
     }
     
     /// Creates the door and adds it as a child entity
@@ -79,7 +93,9 @@ class DoorPortal: Entity {
         addChild(door)
     }
     
-    /// Creates the door frame and adds it as a child entity
+    /// Creates the door frame and adds it as a child entity. In an ideal world, the author would
+    /// be better acquinted with 3D modeling tools and could compose the entire structure as a set of 3D models
+    /// instead of building it from code like done here.
     private func addDoorFrame() {
         // Load the entity from the file and skip to the actual model entity
         let entity = try! Entity.load(named: "Board", in: realityKitContentBundle)
