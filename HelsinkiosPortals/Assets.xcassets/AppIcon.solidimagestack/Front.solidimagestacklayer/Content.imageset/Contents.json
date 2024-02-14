@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "AppIcon-Q-Portal-foreground.png",
       "idiom" : "vision",
       "scale" : "2x"
     }
