@@ -15,7 +15,7 @@ class DoorPortal: Entity {
     }
     
     private static let doorClosedAngle = Float(Angle(degrees: 0).radians)
-    private static let doorOpenAngle = Float(Angle(degrees: 130).radians)
+    private static let doorOpenAngle = Float(Angle(degrees: -110).radians)
     
     private var doorBoundingBox = BoundingBox()
     private var doorOriginalOrientation = simd_quatf()
@@ -118,12 +118,12 @@ class DoorPortal: Entity {
         topBoard.scale.x *= requiredTopBoardLength / boardLength
         let topBoardLength = (bounds.max.x - bounds.min.x) * topBoard.scale.x
         topBoard.position.x += (topBoardLength / 2) - boardWidth
-        topBoard.position.y += (worldDoorHeight + boardWidth) / 2
+        topBoard.position.y += (worldDoorHeight + boardWidth) / 2 - 0.02 // <-- magic number to fix a crack between door + frame
         
         // Place the bottom board and adjust its size to fit the door frame
         let bottomBoard = topBoard.clone(recursive: true)
         bottomBoard.scale.x *= 1.2
-        bottomBoard.position.y -= (worldDoorHeight + boardWidth) - 0.005 // <-- magic number to fix a crack between door + frame
+        bottomBoard.position.y -= (worldDoorHeight + boardWidth) - 0.05 // <-- magic number to fix a crack between door + frame
 
         // Place the stepping board and adjust its size to fit the door frame
         let steppingBoard = bottomBoard.clone(recursive: true)
