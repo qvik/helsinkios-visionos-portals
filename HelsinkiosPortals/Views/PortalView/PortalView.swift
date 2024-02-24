@@ -9,7 +9,6 @@ import RealityKit
 import RealityKitContent
 import SwiftUI
 import AVKit
-import ARKit
 
 struct PortalView: View {
     @State private var landscapePortalState = DoorPortal.State.closed
@@ -78,27 +77,6 @@ struct PortalView: View {
             }
         }
         .gesture(tap)
-        .onAppear(perform: handleOnAppear)
-    }
-    
-    let arkitSession = ARKitSession()
-    let worldTrackingProvider = WorldTrackingProvider()
-    
-    private func handleOnAppear() {
-        Task {
-            try await arkitSession.run([worldTrackingProvider])
-            
-            for await update in worldTrackingProvider.anchorUpdates {
-                switch update.event {
-                case .added, .updated:
-                    // Update the app's understanding of this world anchor.
-                    log.debug("Anchor position updated.")
-                case .removed:
-                    // Remove content related to this anchor.
-                    log.debug("Anchor position now unknown.")
-                }
-            }
-        }
     }
     
     private func createLogo() -> Entity {
