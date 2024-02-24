@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492E65552B89DFF3003ED1AD /* bird_sounds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 492E65542B89DFF3003ED1AD /* bird_sounds.mp3 */; };
+		492E65572B89E068003ED1AD /* ocean_waves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 492E65562B89E068003ED1AD /* ocean_waves.mp3 */; };
 		496711252B6D1A3C00F3337E /* PortalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711242B6D1A3C00F3337E /* PortalView.swift */; };
 		4967112A2B6D2EC500F3337E /* people_in_park.mov in Resources */ = {isa = PBXBuildFile; fileRef = 496711292B6D2EC500F3337E /* people_in_park.mov */; };
 		4967112E2B6E7EB400F3337E /* DoorPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967112D2B6E7EB400F3337E /* DoorPortal.swift */; };
@@ -16,7 +18,6 @@
 		4967113A2B71160500F3337E /* VideoDoorPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711392B71160500F3337E /* VideoDoorPortal.swift */; };
 		4967113C2B72248200F3337E /* CorridorDoorPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967113B2B72248200F3337E /* CorridorDoorPortal.swift */; };
 		4967113E2B7290B400F3337E /* door_open.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4967113D2B7290B400F3337E /* door_open.mp3 */; };
-		496711402B7294BE00F3337E /* bird_sounds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4967113F2B7294BE00F3337E /* bird_sounds.mp3 */; };
 		497CD8C72B6D125C00180009 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 497CD8C62B6D125C00180009 /* RealityKitContent */; };
 		497CD8C92B6D125C00180009 /* HelsinkiosPortalsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497CD8C82B6D125C00180009 /* HelsinkiosPortalsApp.swift */; };
 		497CD8CF2B6D125D00180009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497CD8CE2B6D125D00180009 /* Assets.xcassets */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		492E65542B89DFF3003ED1AD /* bird_sounds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bird_sounds.mp3; sourceTree = "<group>"; };
+		492E65562B89E068003ED1AD /* ocean_waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ocean_waves.mp3; sourceTree = "<group>"; };
 		496711242B6D1A3C00F3337E /* PortalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalView.swift; sourceTree = "<group>"; };
 		496711262B6D28CD00F3337E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		496711292B6D2EC500F3337E /* people_in_park.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = people_in_park.mov; sourceTree = "<group>"; };
@@ -45,7 +48,6 @@
 		496711392B71160500F3337E /* VideoDoorPortal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDoorPortal.swift; sourceTree = "<group>"; };
 		4967113B2B72248200F3337E /* CorridorDoorPortal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorridorDoorPortal.swift; sourceTree = "<group>"; };
 		4967113D2B7290B400F3337E /* door_open.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = door_open.mp3; sourceTree = "<group>"; };
-		4967113F2B7294BE00F3337E /* bird_sounds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bird_sounds.mp3; sourceTree = "<group>"; };
 		497CD8C12B6D125C00180009 /* HelsinkiosPortals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelsinkiosPortals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		497CD8C52B6D125C00180009 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		497CD8C82B6D125C00180009 /* HelsinkiosPortalsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelsinkiosPortalsApp.swift; sourceTree = "<group>"; };
@@ -79,7 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				4967113D2B7290B400F3337E /* door_open.mp3 */,
-				4967113F2B7294BE00F3337E /* bird_sounds.mp3 */,
+				492E65562B89E068003ED1AD /* ocean_waves.mp3 */,
+				492E65542B89DFF3003ED1AD /* bird_sounds.mp3 */,
 				496711292B6D2EC500F3337E /* people_in_park.mov */,
 			);
 			path = Resources;
@@ -266,9 +269,10 @@
 			files = (
 				4967113E2B7290B400F3337E /* door_open.mp3 in Resources */,
 				4967112A2B6D2EC500F3337E /* people_in_park.mov in Resources */,
+				492E65572B89E068003ED1AD /* ocean_waves.mp3 in Resources */,
 				497CD8D22B6D125D00180009 /* Preview Assets.xcassets in Resources */,
 				497CD8CF2B6D125D00180009 /* Assets.xcassets in Resources */,
-				496711402B7294BE00F3337E /* bird_sounds.mp3 in Resources */,
+				492E65552B89DFF3003ED1AD /* bird_sounds.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

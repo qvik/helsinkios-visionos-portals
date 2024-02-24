@@ -182,6 +182,8 @@ class DoorPortal: Entity {
         fatalError("not implemented")
     }
     
+    private var defaultAudioSourceGain: Double?
+    
     func setState(state: State) {
         guard let door = findEntity(named: "Door") else {
             fatalError("Door not found")
@@ -192,6 +194,27 @@ class DoorPortal: Entity {
         var transform = door.transform
         transform.rotation = self.doorOriginalOrientation * simd_quatf(angle: angle, axis: [0, 0, 1])
         door.move(to: transform, relativeTo: self, duration: 1.2, timingFunction: .easeInOut)
+
+        if let audioSource = findEntity(named: "AudioSource"), let defaultGain = defaultAudioSourceGain {
+            // Make any audio source slightly louder when door is open
+            audioSource.spatialAudio!.gain = state == .open ? defaultGain + 15 : defaultGain
+            log.debug("audio gain set to \(audioSource.spatialAudio!.gain)")
+        }
+    }
+    
+    /// Creates an audio source on top of the portal, directed
+    /// downwards to create a positional audio field in front of the portal.
+    func addAudioEntity(soundResourceName: String, gain: Double = 0.0) {
+        let audioSource = Entity()
+        audioSource.name = "AudioSource"
+        defaultAudioSourceGain = gain
+        audioSource.spatialAudio = SpatialAudioComponent(gain: gain, reverbLevel: -.infinity, directivity: .beam(focus: 1.0))
+        addChild(audioSource)
+        audioSource.setPosition([0.0, 0.3, 0.0], relativeTo: self)
+        audioSource.look(at: [0, -1, -10], from: audioSource.position(relativeTo: self), relativeTo: self)
+        
+        let birdAudio = try! AudioFileResource.load(named: soundResourceName, configuration: .init(shouldLoop: true, shouldRandomizeStartTime: true))
+        audioSource.playAudio(birdAudio)
     }
 }
 

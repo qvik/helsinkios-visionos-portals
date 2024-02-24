@@ -21,6 +21,8 @@ class LandscapeDoorPortal: DoorPortal {
         
         world.addChild(skySphere)
         
+        addAudioEntity(soundResourceName: "ocean_waves.mp3", gain: -25)
+
         return world
     }
 }
