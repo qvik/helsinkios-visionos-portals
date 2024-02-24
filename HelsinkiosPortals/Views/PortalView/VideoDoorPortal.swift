@@ -43,9 +43,9 @@ class VideoDoorPortal: DoorPortal {
         // For the bird sounds in the park, create an audio source on top of the portal, directed
         // downwards to create a positional audio field in front of the portal.
         let audioSource = Entity()
-        audioSource.spatialAudio = SpatialAudioComponent(gain: -10, reverbLevel: -.infinity, directivity: .beam(focus: 1.0))
+        audioSource.spatialAudio = SpatialAudioComponent(gain: -5, reverbLevel: -.infinity, directivity: .beam(focus: 1.0))
         addChild(audioSource)
-        audioSource.setPosition([0.2, 0.5, 0.1], relativeTo: self)
+        audioSource.setPosition([0.2, 0.9, 0.1], relativeTo: self)
         audioSource.look(at: [0, -1, 0], from: audioSource.position(relativeTo: nil), relativeTo: nil)
 
         let birdAudio = try! AudioFileResource.load(named: "bird_sounds.mp3", configuration: .init(shouldLoop: true, shouldRandomizeStartTime: true))

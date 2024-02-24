@@ -6,6 +6,10 @@
 //
 
 import SwiftUI
+import OSLog
+
+/// Global logger instance
+let log = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "app")
 
 @main
 struct HelsinkiosPortalsApp: App {
