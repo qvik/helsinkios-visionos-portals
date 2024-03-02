@@ -83,11 +83,46 @@ struct PortalView: View {
         .gesture(tap)
     }
     
+    private func createLogoParticleSystem() -> ParticleEmitterComponent {
+        var particles = ParticleEmitterComponent()
+        
+        particles.timing = .repeating(warmUp: 0.5, emit: ParticleEmitterComponent.Timing.VariableDuration(duration: 1.0))
+
+        particles.emitterShape = .plane
+        particles.birthLocation = .surface
+        particles.emitterShapeSize = [1.2, 0.4, 0.2]
+        particles.birthDirection = .world
+        particles.emissionDirection = [0.0, -1.0, 0.0]
+        particles.speed = 0.15
+        particles.speedVariation = 0.12
+        particles.spawnVelocityFactor = 0.5
+        
+        particles.mainEmitter.color = .evolving(start: .single(.blue), end: .single(.white))
+        particles.mainEmitter.blendMode = .additive
+        particles.mainEmitter.birthRate = 500
+        particles.mainEmitter.birthRateVariation = 100
+        particles.mainEmitter.size = 0.005
+        particles.mainEmitter.lifeSpan = 1.5
+        particles.mainEmitter.lifeSpanVariation = 0.75
+        particles.mainEmitter.spreadingAngle = 0.7
+        particles.mainEmitter.dampingFactor = 0.6
+        
+        return particles
+    }
+
     private func createLogo() -> Entity {
         let logo = try! Entity.load(named: "Portals_logo", in: realityKitContentBundle)
         logo.orientation *= simd_quatf(angle: Constants.deg90, axis: [1, 0, 0])
         let scale: Float = 0.5
         logo.scale = [scale, scale, scale]
+        
+        // Create new child entity to the "Portals" logo to hold the particly system
+        let portalsLogo = logo.findEntity(named: "Portals")!
+        let particleEntity = Entity()
+        particleEntity.position = [1.12, -0.05, 0.0]
+        particleEntity.components.set(createLogoParticleSystem())
+        portalsLogo.addChild(particleEntity)
+        
         return logo
     }
     
