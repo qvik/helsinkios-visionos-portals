@@ -13,7 +13,7 @@
 		4967112A2B6D2EC500F3337E /* people_in_park.mov in Resources */ = {isa = PBXBuildFile; fileRef = 496711292B6D2EC500F3337E /* people_in_park.mov */; };
 		4967112E2B6E7EB400F3337E /* DoorPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967112D2B6E7EB400F3337E /* DoorPortal.swift */; };
 		496711322B6F5BE600F3337E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711312B6F5BE600F3337E /* Constants.swift */; };
-		496711352B70CE3200F3337E /* Entity+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711342B70CE3200F3337E /* Entity+Extensions.swift */; };
+		496711352B70CE3200F3337E /* EntityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711342B70CE3200F3337E /* EntityExtensions.swift */; };
 		496711382B71118000F3337E /* LandscapeDoorPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711372B71118000F3337E /* LandscapeDoorPortal.swift */; };
 		4967113A2B71160500F3337E /* VideoDoorPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711392B71160500F3337E /* VideoDoorPortal.swift */; };
 		4967113C2B72248200F3337E /* CorridorDoorPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967113B2B72248200F3337E /* CorridorDoorPortal.swift */; };
@@ -43,7 +43,7 @@
 		496711292B6D2EC500F3337E /* people_in_park.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = people_in_park.mov; sourceTree = "<group>"; };
 		4967112D2B6E7EB400F3337E /* DoorPortal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorPortal.swift; sourceTree = "<group>"; };
 		496711312B6F5BE600F3337E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		496711342B70CE3200F3337E /* Entity+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+Extensions.swift"; sourceTree = "<group>"; };
+		496711342B70CE3200F3337E /* EntityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityExtensions.swift; sourceTree = "<group>"; };
 		496711372B71118000F3337E /* LandscapeDoorPortal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeDoorPortal.swift; sourceTree = "<group>"; };
 		496711392B71160500F3337E /* VideoDoorPortal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDoorPortal.swift; sourceTree = "<group>"; };
 		4967113B2B72248200F3337E /* CorridorDoorPortal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorridorDoorPortal.swift; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 		496711332B70CDD400F3337E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				496711342B70CE3200F3337E /* Entity+Extensions.swift */,
+				496711342B70CE3200F3337E /* EntityExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -290,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				496711352B70CE3200F3337E /* Entity+Extensions.swift in Sources */,
+				496711352B70CE3200F3337E /* EntityExtensions.swift in Sources */,
 				497CD8C92B6D125C00180009 /* HelsinkiosPortalsApp.swift in Sources */,
 				4967113A2B71160500F3337E /* VideoDoorPortal.swift in Sources */,
 				496711252B6D1A3C00F3337E /* PortalView.swift in Sources */,

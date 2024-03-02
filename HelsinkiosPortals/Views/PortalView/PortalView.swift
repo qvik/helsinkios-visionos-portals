@@ -49,19 +49,23 @@ struct PortalView: View {
             let landscapePortal = LandscapeDoorPortal()
             landscapePortal.orientation *= simd_quatf(angle: Constants.deg35, axis: [0, 1, 0])
             landscapePortal.position = [-1.7, doorYPosition, -1.5]
+            landscapePortal.enableGroundShadow()
             content.add(landscapePortal)
             
             let corridorPortal = CorridorDoorPortal()
             corridorPortal.position = [-0.2, doorYPosition, -2.2]
+            corridorPortal.enableGroundShadow()
             content.add(corridorPortal)
 
             let videoPortal = VideoDoorPortal()
             videoPortal.orientation *= simd_quatf(angle: -Constants.deg50, axis: [0, 1, 0])
             videoPortal.position = [1.4, doorYPosition, -1.6]
+            videoPortal.enableGroundShadow()
             content.add(videoPortal)
 
             let logo = createLogo()
-            logo.position = [0.3, 2.2, -1.8]
+            logo.position = [0.3, 2.5, -1.8]
+            logo.enableGroundShadow()
             content.add(logo)
         } update: { content in
             if let landscapeDoorPortal = content.entities.first(where: { $0 is LandscapeDoorPortal }) as? DoorPortal {
@@ -80,12 +84,14 @@ struct PortalView: View {
     }
     
     private func createLogo() -> Entity {
-        let logo = try! Entity.load(named: "HelsinkiOSPortalsLogo", in: realityKitContentBundle)
+        let logo = try! Entity.load(named: "Portals_logo", in: realityKitContentBundle)
         logo.orientation *= simd_quatf(angle: Constants.deg90, axis: [1, 0, 0])
+        let scale: Float = 0.5
+        logo.scale = [scale, scale, scale]
         return logo
     }
     
-    /// Returns the DoorPortal entity that is the ancestor of the given entity, or nil if nit found.
+    /// Returns the DoorPortal entity that is the ancestor of the given entity, or nil if not found.
     private func findDoorPortalAncestor(for entity: Entity) -> DoorPortal? {
         guard let parent = entity.parent else {
             return nil

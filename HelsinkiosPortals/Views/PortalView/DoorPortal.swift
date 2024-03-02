@@ -208,13 +208,13 @@ class DoorPortal: Entity {
         let audioSource = Entity()
         audioSource.name = "AudioSource"
         defaultAudioSourceGain = gain
-        audioSource.spatialAudio = SpatialAudioComponent(gain: gain, reverbLevel: -.infinity, directivity: .beam(focus: 1.0))
+        audioSource.spatialAudio = SpatialAudioComponent(gain: gain, reverbLevel: -.infinity, directivity: .beam(focus: 0.99))
         addChild(audioSource)
-        audioSource.setPosition([0.0, 0.3, 0.0], relativeTo: self)
-        audioSource.look(at: [0, -1, -10], from: audioSource.position(relativeTo: self), relativeTo: self)
+        audioSource.setPosition([0.0, 0.5, 0.0], relativeTo: self)
+        audioSource.look(at: [0, -1, 0], from: audioSource.position(relativeTo: self), relativeTo: self)
         
-        let birdAudio = try! AudioFileResource.load(named: soundResourceName, configuration: .init(shouldLoop: true, shouldRandomizeStartTime: true))
-        audioSource.playAudio(birdAudio)
+        let audio = try! AudioFileResource.load(named: soundResourceName, configuration: .init(shouldLoop: true, shouldRandomizeStartTime: true))
+        audioSource.playAudio(audio)
     }
 }
 

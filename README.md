@@ -1,8 +1,8 @@
-# HelsinkiOS Portals Demo
+# VisionOS Portals Demo
 
 This application demonstrates the use of portals in visionOS.
 
-It was developed as a demo for HelsinkiOS / Spring of 2024.
+It was developed as a demo for ~~HelsinkiOS~~ Qvik Pizza & Beers / Spring of 2024.
 
 # Notes
 

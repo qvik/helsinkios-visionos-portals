@@ -40,7 +40,7 @@ class VideoDoorPortal: DoorPortal {
             player.play()
         }
         
-        addAudioEntity(soundResourceName: "bird_sounds.mp3", gain: 0)
+        addAudioEntity(soundResourceName: "bird_sounds.mp3", gain: -10)
         
         return world
     }
