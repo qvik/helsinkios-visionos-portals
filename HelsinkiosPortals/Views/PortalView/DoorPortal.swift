@@ -22,6 +22,7 @@ class DoorPortal: Entity {
     private var doorScale = SIMD3<Float>()
     
     private var doorAudio: AudioFileResource
+    private var defaultAudioSourceGain: Double?
     
     /// Returns the width of the door's geometry
     var doorWidth: Float {
@@ -181,8 +182,6 @@ class DoorPortal: Entity {
     func createPortalWorld() -> Entity {
         fatalError("not implemented")
     }
-    
-    private var defaultAudioSourceGain: Double?
     
     func setState(state: State) {
         guard let door = findEntity(named: "Door") else {

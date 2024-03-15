@@ -10,10 +10,21 @@ import RealityKitContent
 import SwiftUI
 import AVKit
 
-struct PortalView: View {
+struct PortalImmersiveView: View {
+    enum ViewState {
+        case doors, alley
+    }
+    
+    private let logoEntityName = "portals_logo"
+    private let viewStateAttachmentId = "view_state_attachment"
+    
     @State private var landscapePortalState = DoorPortal.State.closed
     @State private var videoPortalState = DoorPortal.State.closed
     @State private var corridorPortalState = DoorPortal.State.closed
+    
+    @State private var viewState: ViewState = .doors
+
+    @ObservedObject var handGestureModel: HandGestureModel
 
     var tap: some Gesture {
         SpatialTapGesture()
@@ -43,37 +54,89 @@ struct PortalView: View {
     }
     
     var body: some View {
+        ZStack {
+            createDoorRealityView()
+                .opacity(viewState == .doors ? 1.0 : 0.0)
+            createAlleyRealityView()
+                .opacity(viewState == .alley ? 1.0 : 0.0)
+            createLogoRealityView()
+        }
+    }
+    
+    private let logoDoorsPosition: SIMD3<Float> = [0.3, 2.5, -1.8]
+    private let logoAlleyPosition: SIMD3<Float> = [0.9, 2.5, -0.8]
+    
+    private func createLogoRealityView() -> some View {
+        RealityView { content, attachments  in
+            let logo = createLogo()
+            logo.position = viewState == .doors ? logoDoorsPosition : logoAlleyPosition
+            logo.enableGroundShadow()
+            content.add(logo)
+        } update: { content, attachments in
+            if let logo = content.entities.first(where: { $0.name == logoEntityName }) {
+                // Set logo position according to view state as the scenes are quite different
+                let newPosition = viewState == .doors ? logoDoorsPosition : logoAlleyPosition
+                logo.move(to: .init(translation: newPosition), relativeTo: nil, duration: 1.0, timingFunction: .easeInOut)
+            }
+
+#if targetEnvironment(simulator)
+            // On simulator - with no way of generating the hand gesture - always show the
+            // scene selection attachment in stationary position
+            if let attachment = attachments.entity(for: viewStateAttachmentId) {
+                attachment.position = [-0.1, 1, -1]
+                content.add(attachment)
+            }
+#else
+            // On device, show the scene selection attachment when hand gesture is active,
+            // positioned slightly over the hand generating the gesture
+            if let attachment = attachments.entity(for: viewStateAttachmentId),
+               let handWorldPosition = handGestureModel.handGesturePosition {
+                attachment.position = handWorldPosition
+                attachment.position.y += 0.15
+                content.add(attachment)
+            }
+#endif
+        } attachments: {
+            Attachment(id: viewStateAttachmentId) {
+                ViewStateAttachmentView(viewState: $viewState)
+                    .frame(width: 250, height: 150)
+                    .glassBackgroundEffect()
+#if !targetEnvironment(simulator)
+                    .opacity(handGestureModel.handGesturePosition != nil ? 1.0 : 0.0)
+#endif
+            }
+        }
+        .task {
+            await handGestureModel.start()
+        }
+        .task {
+            await handGestureModel.processEvents()
+        }
+        .task {
+            await handGestureModel.listenToHandtrackingUpdates()
+        }
+    }
+    
+    private func createDoorRealityView() -> some View {
         RealityView { content in
             let doorYPosition: Float = 1.04
-
-//            let landscapePortal = LandscapeDoorPortal()
-//            landscapePortal.orientation *= simd_quatf(angle: Constants.deg35, axis: [0, 1, 0])
-//            landscapePortal.position = [-1.7, doorYPosition, -1.5]
-//            landscapePortal.enableGroundShadow()
-//            content.add(landscapePortal)
-//            
-//            let corridorPortal = CorridorDoorPortal()
-//            corridorPortal.position = [-0.2, doorYPosition, -2.2]
-//            corridorPortal.enableGroundShadow()
-//            content.add(corridorPortal)
-//
-//            let videoPortal = VideoDoorPortal()
-//            videoPortal.orientation *= simd_quatf(angle: -Constants.deg50, axis: [0, 1, 0])
-//            videoPortal.position = [1.4, doorYPosition, -1.6]
-//            videoPortal.enableGroundShadow()
-//            content.add(videoPortal)
-//
-//            let logo = createLogo()
-//            logo.position = [0.3, 2.5, -1.8]
-//            logo.enableGroundShadow()
-//            content.add(logo)
-//            
-//            let windowPortal = createWindowPortal()
-//            windowPortal.position = [0.0, 1.2, -1]
-//            content.add(windowPortal)
-            let alleyPortal = createAlleyPortal()
-            alleyPortal.position = [0, 0, -1]
-            content.add(alleyPortal)
+            
+            let landscapePortal = LandscapeDoorPortal()
+            landscapePortal.orientation *= simd_quatf(angle: Constants.deg35, axis: [0, 1, 0])
+            landscapePortal.position = [-1.7, doorYPosition, -1.5]
+            landscapePortal.enableGroundShadow()
+            content.add(landscapePortal)
+            
+            let corridorPortal = CorridorDoorPortal()
+            corridorPortal.position = [-0.2, doorYPosition, -2.2]
+            corridorPortal.enableGroundShadow()
+            content.add(corridorPortal)
+            
+            let videoPortal = VideoDoorPortal()
+            videoPortal.orientation *= simd_quatf(angle: -Constants.deg50, axis: [0, 1, 0])
+            videoPortal.position = [1.4, doorYPosition, -1.6]
+            videoPortal.enableGroundShadow()
+            content.add(videoPortal)
         } update: { content in
             if let landscapeDoorPortal = content.entities.first(where: { $0 is LandscapeDoorPortal }) as? DoorPortal {
                 landscapeDoorPortal.setState(state: landscapePortalState)
@@ -88,6 +151,14 @@ struct PortalView: View {
             }
         }
         .gesture(tap)
+    }
+    
+    private func createAlleyRealityView() -> some View {
+        RealityView { content in
+            let alleyPortal = createAlleyPortal()
+            alleyPortal.position = [0, 0, -1]
+            content.add(alleyPortal)
+        }
     }
     
     private func createLogoParticleSystem() -> ParticleEmitterComponent {
@@ -130,6 +201,8 @@ struct PortalView: View {
         particleEntity.components.set(createLogoParticleSystem())
         portalsLogo.addChild(particleEntity)
         
+        logo.name = logoEntityName
+        
         return logo
     }
     
@@ -139,30 +212,10 @@ struct PortalView: View {
         // Override the placeholder material on Occlusion_Cube with OcclusionMaterial
         // to hide geometry on the other side of the portal.
         let occlusionEntity = alleyPortal.findEntity(named: "Occlusion_Cube") as! ModelEntity
-        let occlusionMaterial = OcclusionMaterial()
-        occlusionEntity.model!.materials = [occlusionMaterial]
+        occlusionEntity.model!.materials = [OcclusionMaterial()]
 
         return alleyPortal
     }
-
-    /// Creates an ImageBasedLightComponent from a single-color source image. This can be
-    /// used to override default scene lighting.
-//    private func createIBLComponent() -> ImageBasedLightComponent {
-//        // Create a CGImage filled with color
-//        let size = CGSize(width: 200, height: 100)
-//        UIGraphicsBeginImageContextWithOptions(size, true, 0.0)
-//        let context = UIGraphicsGetCurrentContext()!
-//        context.setFillColor(UIColor.white.cgColor)
-//        context.fill(CGRect(origin: .zero, size: size))
-//        let cgImage = context.makeImage()!
-//        UIGraphicsEndImageContext()
-//        
-//        // Create the IBL component out of the image
-//        let resource = try! EnvironmentResource.generate(fromEquirectangular: cgImage)
-//        let iblComponent = ImageBasedLightComponent(source: .single(resource), intensityExponent: 10.0)
-//        
-//        return iblComponent
-//    }
 
     /// Returns the DoorPortal entity that is the ancestor of the given entity, or nil if not found.
     private func findDoorPortalAncestor(for entity: Entity) -> DoorPortal? {
@@ -179,5 +232,5 @@ struct PortalView: View {
 }
 
 #Preview {
-    PortalView()
+    PortalImmersiveView(handGestureModel: HandGestureModel())
 }

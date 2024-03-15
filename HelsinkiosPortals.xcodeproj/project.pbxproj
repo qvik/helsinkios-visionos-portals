@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490154202BA4750200AAD32C /* ViewStateAttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901541F2BA4750200AAD32C /* ViewStateAttachmentView.swift */; };
+		490154232BA478F000AAD32C /* HandGestureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490154222BA478F000AAD32C /* HandGestureModel.swift */; };
+		490154252BA4794D00AAD32C /* SIMDExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490154242BA4794D00AAD32C /* SIMDExtensions.swift */; };
 		492E65552B89DFF3003ED1AD /* bird_sounds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 492E65542B89DFF3003ED1AD /* bird_sounds.mp3 */; };
 		492E65572B89E068003ED1AD /* ocean_waves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 492E65562B89E068003ED1AD /* ocean_waves.mp3 */; };
-		496711252B6D1A3C00F3337E /* PortalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711242B6D1A3C00F3337E /* PortalView.swift */; };
+		496711252B6D1A3C00F3337E /* PortalImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711242B6D1A3C00F3337E /* PortalImmersiveView.swift */; };
 		4967112A2B6D2EC500F3337E /* people_in_park.mov in Resources */ = {isa = PBXBuildFile; fileRef = 496711292B6D2EC500F3337E /* people_in_park.mov */; };
 		4967112E2B6E7EB400F3337E /* DoorPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967112D2B6E7EB400F3337E /* DoorPortal.swift */; };
 		496711322B6F5BE600F3337E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496711312B6F5BE600F3337E /* Constants.swift */; };
@@ -36,9 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4901541F2BA4750200AAD32C /* ViewStateAttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStateAttachmentView.swift; sourceTree = "<group>"; };
+		490154222BA478F000AAD32C /* HandGestureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandGestureModel.swift; sourceTree = "<group>"; };
+		490154242BA4794D00AAD32C /* SIMDExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIMDExtensions.swift; sourceTree = "<group>"; };
 		492E65542B89DFF3003ED1AD /* bird_sounds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bird_sounds.mp3; sourceTree = "<group>"; };
 		492E65562B89E068003ED1AD /* ocean_waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ocean_waves.mp3; sourceTree = "<group>"; };
-		496711242B6D1A3C00F3337E /* PortalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalView.swift; sourceTree = "<group>"; };
+		496711242B6D1A3C00F3337E /* PortalImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalImmersiveView.swift; sourceTree = "<group>"; };
 		496711262B6D28CD00F3337E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		496711292B6D2EC500F3337E /* people_in_park.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = people_in_park.mov; sourceTree = "<group>"; };
 		4967112D2B6E7EB400F3337E /* DoorPortal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorPortal.swift; sourceTree = "<group>"; };
@@ -92,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				496711342B70CE3200F3337E /* EntityExtensions.swift */,
+				490154242BA4794D00AAD32C /* SIMDExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -100,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				496711312B6F5BE600F3337E /* Constants.swift */,
+				490154222BA478F000AAD32C /* HandGestureModel.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -174,11 +182,12 @@
 		497CD8E72B6D15C100180009 /* PortalView */ = {
 			isa = PBXGroup;
 			children = (
-				496711242B6D1A3C00F3337E /* PortalView.swift */,
+				496711242B6D1A3C00F3337E /* PortalImmersiveView.swift */,
 				4967112D2B6E7EB400F3337E /* DoorPortal.swift */,
 				496711372B71118000F3337E /* LandscapeDoorPortal.swift */,
 				496711392B71160500F3337E /* VideoDoorPortal.swift */,
 				4967113B2B72248200F3337E /* CorridorDoorPortal.swift */,
+				4901541F2BA4750200AAD32C /* ViewStateAttachmentView.swift */,
 			);
 			path = PortalView;
 			sourceTree = "<group>";
@@ -290,14 +299,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490154232BA478F000AAD32C /* HandGestureModel.swift in Sources */,
 				496711352B70CE3200F3337E /* EntityExtensions.swift in Sources */,
 				497CD8C92B6D125C00180009 /* HelsinkiosPortalsApp.swift in Sources */,
 				4967113A2B71160500F3337E /* VideoDoorPortal.swift in Sources */,
-				496711252B6D1A3C00F3337E /* PortalView.swift in Sources */,
+				496711252B6D1A3C00F3337E /* PortalImmersiveView.swift in Sources */,
 				496711382B71118000F3337E /* LandscapeDoorPortal.swift in Sources */,
 				4967113C2B72248200F3337E /* CorridorDoorPortal.swift in Sources */,
 				496711322B6F5BE600F3337E /* Constants.swift in Sources */,
+				490154202BA4750200AAD32C /* ViewStateAttachmentView.swift in Sources */,
 				4967112E2B6E7EB400F3337E /* DoorPortal.swift in Sources */,
+				490154252BA4794D00AAD32C /* SIMDExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

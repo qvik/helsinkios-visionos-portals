@@ -14,10 +14,15 @@ let log = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "app")
 @main
 struct HelsinkiosPortalsApp: App {
     @State private var portalImmersionStyle: ImmersionStyle = .mixed
-    
+
     var body: some Scene {
         ImmersiveSpace(id: "PortalView") {
-            PortalView()
+            PortalImmersiveView(handGestureModel: Globals.handGestureModel)
         }.immersionStyle(selection: $portalImmersionStyle, in: .mixed)
     }
+}
+
+@MainActor
+enum Globals {
+    static let handGestureModel = HandGestureModel()
 }
