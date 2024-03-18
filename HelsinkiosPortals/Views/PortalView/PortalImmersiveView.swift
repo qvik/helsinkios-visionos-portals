@@ -18,6 +18,9 @@ struct PortalImmersiveView: View {
     private let logoEntityName = "portals_logo"
     private let viewStateAttachmentId = "view_state_attachment"
     
+    private let logoDoorsPosition: SIMD3<Float> = [0.3, 2.5, -1.8]
+    private let logoAlleyPosition: SIMD3<Float> = [0.9, 2.5, -0.8]
+    
     @State private var landscapePortalState = DoorPortal.State.closed
     @State private var videoPortalState = DoorPortal.State.closed
     @State private var corridorPortalState = DoorPortal.State.closed
@@ -56,15 +59,15 @@ struct PortalImmersiveView: View {
     var body: some View {
         ZStack {
             createDoorRealityView()
+                .frame(depth: 0)
                 .opacity(viewState == .doors ? 1.0 : 0.0)
             createAlleyRealityView()
+                .frame(depth: 0)
                 .opacity(viewState == .alley ? 1.0 : 0.0)
             createLogoRealityView()
+                .frame(depth: 0)
         }
     }
-    
-    private let logoDoorsPosition: SIMD3<Float> = [0.3, 2.5, -1.8]
-    private let logoAlleyPosition: SIMD3<Float> = [0.9, 2.5, -0.8]
     
     private func createLogoRealityView() -> some View {
         RealityView { content, attachments  in
@@ -76,7 +79,9 @@ struct PortalImmersiveView: View {
             if let logo = content.entities.first(where: { $0.name == logoEntityName }) {
                 // Set logo position according to view state as the scenes are quite different
                 let newPosition = viewState == .doors ? logoDoorsPosition : logoAlleyPosition
-                logo.move(to: .init(translation: newPosition), relativeTo: nil, duration: 1.0, timingFunction: .easeInOut)
+                var newTransform = logo.transform
+                newTransform.translation = newPosition
+                logo.move(to: newTransform, relativeTo: nil, duration: 1.0, timingFunction: .easeInOut)
             }
 
 #if targetEnvironment(simulator)
@@ -139,15 +144,21 @@ struct PortalImmersiveView: View {
             content.add(videoPortal)
         } update: { content in
             if let landscapeDoorPortal = content.entities.first(where: { $0 is LandscapeDoorPortal }) as? DoorPortal {
-                landscapeDoorPortal.setState(state: landscapePortalState)
+                if landscapeDoorPortal.state != landscapePortalState {
+                    landscapeDoorPortal.setState(state: landscapePortalState)
+                }
             }
             
             if let videoDoorPortal = content.entities.first(where: { $0 is VideoDoorPortal }) as? DoorPortal {
-                videoDoorPortal.setState(state: videoPortalState)
+                if videoDoorPortal.state != videoPortalState {
+                    videoDoorPortal.setState(state: videoPortalState)
+                }
             }
             
             if let corridorDoorPortal = content.entities.first(where: { $0 is CorridorDoorPortal }) as? DoorPortal {
-                corridorDoorPortal.setState(state: corridorPortalState)
+                if corridorDoorPortal.state != corridorPortalState {
+                    corridorDoorPortal.setState(state: corridorPortalState)
+                }
             }
         }
         .gesture(tap)
@@ -156,7 +167,7 @@ struct PortalImmersiveView: View {
     private func createAlleyRealityView() -> some View {
         RealityView { content in
             let alleyPortal = createAlleyPortal()
-            alleyPortal.position = [0, 0, -1]
+            alleyPortal.position = [0, -0.02, -1]
             content.add(alleyPortal)
         }
     }

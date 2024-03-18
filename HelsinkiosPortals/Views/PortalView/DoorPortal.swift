@@ -14,6 +14,8 @@ class DoorPortal: Entity {
         case open, closed
     }
     
+    var state: State = .closed
+    
     private static let doorClosedAngle = Float(Angle(degrees: 0).radians)
     private static let doorOpenAngle = Float(Angle(degrees: -110).radians)
     
@@ -199,6 +201,8 @@ class DoorPortal: Entity {
             audioSource.spatialAudio!.gain = state == .open ? defaultGain + 15 : defaultGain
             log.debug("audio gain set to \(audioSource.spatialAudio!.gain)")
         }
+        
+        self.state = state
     }
     
     /// Creates an audio source on top of the portal, directed
